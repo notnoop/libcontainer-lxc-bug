@@ -1,0 +1,87 @@
+RUNNING WITHOUT LXC LINKED
+13:pids:/system/test-container
+12:hugetlb:/system/test-container
+11:net_prio:/system/test-container
+10:perf_event:/system/test-container
+9:net_cls:/system/test-container
+8:freezer:/system/test-container
+7:devices:/system/test-container
+6:memory:/system/test-container
+5:blkio:/system/test-container
+4:cpuacct:/system/test-container
+3:cpu:/system/test-container
+2:cpuset:/system/test-container
+1:name=systemd:/user/1000.user/3.session/system/test-container
+WARN[0000] no such directory for freezer.state
+WARN[0000] no such directory for freezer.state
+
+RUNNING WITH LXC_LINKED
+running three times because it is a race
+
+RUN 1.
+13:pids:/system/test-container
+12:hugetlb:/system/test-container
+11:net_prio:/system/test-container
+10:perf_event:/system/test-container
+9:net_cls:/system/test-container
+8:freezer:/system/test-container
+7:devices:/system/test-container
+6:memory:/system/test-container
+5:blkio:/system/test-container
+4:cpuacct:/system/test-container
+3:cpu:/system/test-container
+2:cpuset:/system/test-container
+1:name=systemd:/system/test-container
+WARN[0000] no such directory for freezer.state
+WARN[0000] no such directory for freezer.state
+
+RUN 2.
+13:pids:/
+12:hugetlb:/
+11:net_prio:/
+10:perf_event:/
+9:net_cls:/
+8:freezer:/
+7:devices:/
+6:memory:/
+5:blkio:/
+4:cpuacct:/
+3:cpu:/
+2:cpuset:/
+1:name=systemd:/
+WARN[0000] no such directory for freezer.state
+WARN[0000] no such directory for freezer.state
+
+RUN 3.
+13:pids:/
+12:hugetlb:/
+11:net_prio:/system/test-container
+10:perf_event:/system/test-container
+9:net_cls:/system/test-container
+8:freezer:/system/test-container
+7:devices:/
+6:memory:/
+5:blkio:/
+4:cpuacct:/
+3:cpu:/
+2:cpuset:/
+1:name=systemd:/
+WARN[0000] no such directory for freezer.state
+WARN[0000] no such directory for freezer.state
+
+RUN 4.
+13:pids:/system/test-container
+12:hugetlb:/system/test-container
+11:net_prio:/system/test-container
+10:perf_event:/system/test-container
+9:net_cls:/system/test-container
+8:freezer:/system/test-container
+7:devices:/
+6:memory:/
+5:blkio:/system/test-container
+4:cpuacct:/
+3:cpu:/
+2:cpuset:/
+1:name=systemd:/system/test-container
+WARN[0000] no such directory for freezer.state
+WARN[0000] no such directory for freezer.state

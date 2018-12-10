@@ -1,0 +1,31 @@
+RUNNING WITHOUT LINKING LXC
+Hello I am here
+13:pids:/test-lxc/plainc-lxc-1544490990
+12:hugetlb:/test-lxc/plainc-lxc-1544490990
+11:net_prio:/test-lxc/plainc-lxc-1544490990
+10:perf_event:/test-lxc/plainc-lxc-1544490990
+9:net_cls:/test-lxc/plainc-lxc-1544490990
+8:freezer:/test-lxc/plainc-lxc-1544490990
+7:devices:/test-lxc/plainc-lxc-1544490990
+6:memory:/test-lxc/plainc-lxc-1544490990
+5:blkio:/test-lxc/plainc-lxc-1544490990
+4:cpuacct:/test-lxc/plainc-lxc-1544490990
+3:cpu:/test-lxc/plainc-lxc-1544490990
+2:cpuset:/test-lxc/plainc-lxc-1544490990
+1:name=systemd:/test-lxc/plainc-lxc-1544490990
+
+RUNNING WITH LINKING LXC
+Hello I am here
+13:pids:/
+12:hugetlb:/
+11:net_prio:/
+10:perf_event:/
+9:net_cls:/
+8:freezer:/
+7:devices:/
+6:memory:/
+5:blkio:/
+4:cpuacct:/
+3:cpu:/
+2:cpuset:/
+1:name=systemd:/
