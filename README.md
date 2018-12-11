@@ -42,9 +42,15 @@ We have few solutions in Nomad:
 * Use Nomad 9.0 Plugins: we can distribute LXC as an external plugin driver.  This ensures executors self-invocation will not be corrupted by liblxc interactions.
 * Use `lxc` tools instead of linking to the library.  `lxc` library is pain: it requires publishing special binaries, constrains development on it to Linux boxes with lxc installed.  Using `lxc` commands makes it easier to develop and publish a single binary without losing much power, as the lxc CLIs are thin wrappers around the library.
 
-### Details
+### Impacted installations
 
-Mahmood tested this only on Ubuntu 14.04 and liblxc 1.x and 2.x, the configuration used in Nomad TravisCI setup.  I have not tested against recent versions of Ubuntu.
+This bug is relevant only when liblxc is compiled with cgmanager support, which is the case in Ubuntu 14.04.  It affects customers using Nomad 0.9 (due to its libcontainer use) running on Ubuntu 14.04, but not 16.04 and 18.04.  On 16.04/18.04, liblxc initializers are still run but they seem harmless at this point (e.g. they read cgroups and lxc conf but don't change cgroups).
+
+liblxc1 in Ubuntu 14.04 depends on cgmanager[1], but not on Ubuntu 16.04[2] or 18.04[3].
+
+[1] https://packages.ubuntu.com/trusty-updates/liblxc1
+[2] https://packages.ubuntu.com/xenial/liblxc1
+[3] https://packages.ubuntu.com/bionic/liblxc1
 
 
 ## How to reproduce!
