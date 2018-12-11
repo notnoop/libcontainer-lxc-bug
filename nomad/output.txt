@@ -1,0 +1,23 @@
+vagrant@vagrant:~/go/src/github.com/notnoop/libcontainer-lxc-bug/nomad$ sudo ./test.sh
+starting nomad
+waiting for nomad to be ready: .... ready
+No job(s) with prefix or id "example" found
+==> Monitoring evaluation "d028644e"
+    Evaluation triggered by job "example"
+    Allocation "81c6feb7" created: node "32680157", group "example"
+    Evaluation status changed: "pending" -> "complete"
+==> Evaluation "d028644e" finished with status "complete"
+waiting for nomad job to complete:  ready
+13:pids:/
+12:hugetlb:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4
+11:net_prio:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4
+10:perf_event:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4
+9:net_cls:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4
+8:freezer:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4
+7:devices:/
+6:memory:/
+5:blkio:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4
+4:cpuacct:/
+3:cpu:/
+2:cpuset:/
+1:name=systemd:/nomad/f05bce5b-b7ba-1c7e-b37d-3a5b2f4d01b4

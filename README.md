@@ -13,7 +13,9 @@ You can reproduce the problem by running `sudo test.sh` in each of the directori
 
 [`libcontainer/output.txt`](./libcontainer/output.txt) has a sample output of libcontainer test case.  When compiled without LXC, the cgroups inside the cgroup container consistently get set; but when running with liblxc, the cgroup results vary from run to run with only some cgroup subsystems getting assigned to the expected values.
 
-It's worth noting that in both cases, linking against liblxc is sufficient to trigger the issue.  No calls to liblxc library is required.
+There is also a third directory, [`nomad`](./nomad), with scripts for demonstrating the issue with Nomad itself.  [`nomad/output.txt`](./nomad/output.txt) shows a sample job that shows inconsistent cgroup settings inside the exec container.
+
+It's worth noting that in all cases, linking against liblxc is sufficient to trigger the issue.  No calls to liblxc library is required.
 
 ## Why?! How?!
 
@@ -59,5 +61,8 @@ cd ~/go/src/github.com/notnoop/libcontainer-lxc-bug/plain-c/
 sudo ./test.sh
 
 cd ~/go/src/github.com/notnoop/libcontainer-lxc-bug/libcontainer/
+sudo ./test.sh
+
+cd ~/go/src/github.com/notnoop/libcontainer-lxc-bug/nomad
 sudo ./test.sh
 ```
